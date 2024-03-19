@@ -1,12 +1,13 @@
-import { Button, Heading, TextField } from '@radix-ui/themes';
-import React from 'react'
-import { FaEnvelope } from 'react-icons/fa6';
-import { PiInstagramLogo, PiFacebookLogo,PiYoutubeLogo } from "react-icons/pi";
-import { Link } from 'react-router-dom';
+import React from "react";
+import { FaEnvelope } from "react-icons/fa6";
+import { PiInstagramLogo, PiFacebookLogo, PiYoutubeLogo } from "react-icons/pi";
+import { Link } from "react-router-dom";
+import { Button, Heading, TextField } from "@radix-ui/themes";
+
 function Footer() {
-  return (
+	return (
 		<div className='bg-slate-800 p-10 text-white'>
-			<div className='flex gap-10 justify-around'>
+			<div className='flex flex-col lg:flex-row gap-10 justify-around'>
 				<div className='flex flex-col gap-5'>
 					<Heading>Nexcent</Heading>
 					<div className='text-gray-300'>
@@ -27,16 +28,16 @@ function Footer() {
 						<Link to={"#/"}>Blog</Link>
 						<Link to={"#/"}>Contact Us</Link>
 						<Link to={"#/"}>Pricing</Link>
-						<Link to={"#/"}>Testimonial</Link>
+						<Link to={"#/"}>Testimonials</Link>
 					</div>
 				</div>
 				<div className='flex flex-col gap-3'>
 					<Heading size={"4"}>Support</Heading>
 					<div className='flex flex-col gap-2 text-gray-300'>
-						<Link to={"#/"}>Help center</Link>
-						<Link to={"#/"}>Terms of service</Link>
+						<Link to={"#/"}>Help Center</Link>
+						<Link to={"#/"}>Terms of Service</Link>
 						<Link to={"#/"}>Legal</Link>
-						<Link to={"#/"}>Privacy policy</Link>
+						<Link to={"#/"}>Privacy Policy</Link>
 						<Link to={"#/"}>Status</Link>
 					</div>
 				</div>
@@ -46,7 +47,7 @@ function Footer() {
 						<TextField.Root>
 							<TextField.Input
 								size={"3"}
-								placeholder='Enter your mail'
+								placeholder='Enter your email'
 							/>
 							<TextField.Slot>
 								<FaEnvelope />
@@ -55,7 +56,7 @@ function Footer() {
 						<Button
 							className='cursor-pointer'
 							size={"3"}>
-						     Submit
+							Submit
 						</Button>
 					</div>
 				</div>
@@ -64,4 +65,4 @@ function Footer() {
 	);
 }
 
-export default Footer
+export default Footer;
