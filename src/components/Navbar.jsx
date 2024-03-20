@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 import * as Portal from "@radix-ui/react-portal";
@@ -9,9 +9,26 @@ function Navbar() {
 	const toggleMenu = () => {
 		setIsOpen(!isOpen);
 	};
+	useEffect(() => {
+		window.addEventListener("scroll", (e) => {
+			if (window.pageYOffset > 200) {
+				document
+					.querySelector("nav")
+					.classList.add("fixed","w-full","bg-white","shadow-lg")
+				
+			}
+			if (window.pageYOffset <= 100) {
+				document
+					.querySelector("nav")
+					.classList.remove("fixed", "w-full", "bg-white", "shadow-lg");
+				
+			}
+		});
+		
+	},[])
 
 	return (
-		<nav className='flex justify-between items-center px-8 py-5'>
+		<nav className='flex duration-300 z-10 transition  justify-between items-center px-8 py-5'>
 			<Link
 				to={"/"}
 				className='text-2xl font-bold'>
