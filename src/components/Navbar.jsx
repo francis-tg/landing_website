@@ -28,20 +28,26 @@ function Navbar() {
 	},[])
 
 	return (
-		<nav className='flex duration-300 z-10 transition  justify-between items-center px-8 py-5'>
+		<nav className='flex duration-300 z-10 transition justify-between items-center px-8 py-5'>
 			<Link
 				to={"/"}
 				className='text-2xl font-bold'>
 				Nexcent
 			</Link>
-
-			{/* Burger Icon for mobile */}
-			<button
-				type='button'
-				className='lg:hidden text-gray-500 focus:outline-none'
-				onClick={toggleMenu}>
-				<HamburgerMenuIcon className='w-6 h-6' />
-			</button>
+			<div className='flex items-center gap-5 lg:hidden'>
+				<Link
+					to={"/login"}
+					className='text-green-500 '>
+					Login
+				</Link>
+				{/* Burger Icon for mobile */}
+				<button
+					type='button'
+					className='lg:hidden text-gray-500 focus:outline-none'
+					onClick={toggleMenu}>
+					<HamburgerMenuIcon className='w-6 h-6' />
+				</button>
+			</div>
 
 			{/* Responsive menu */}
 			{isOpen && (
@@ -87,7 +93,7 @@ function Navbar() {
 			)}
 
 			<div className='hidden lg:flex justify-center gap-5 items-center'>
-				<Link to={"/"}>Home</Link>
+				<Link to={"#/"}>Home</Link>
 				<Link to={"#/"}>Service</Link>
 				<Link to={"#/"}>Feature</Link>
 				<Link to={"#/"}>Product</Link>
